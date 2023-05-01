@@ -1,0 +1,75 @@
+@use "font" as *;
+@use "variables" as *;
+
+@mixin page-header-desktop {
+  font-size: 60px;
+  line-height: 68px;
+  font-family: $avenir_regular;
+}
+
+@mixin section-header-desktop {
+  font-size: 30px;
+  line-height: 44px;
+  font-family: $avenir_regular;
+}
+
+@mixin subheader-desktop {
+  font-size: 24px;
+  line-height: 32px;
+  font-family: $avenir_demi;
+}
+
+@mixin body-copy-desktop {
+  font-size: 14px;
+  line-height: 22px;
+  font-family: $avenir_regular;
+}
+@mixin footer-copy-desktop {
+  font-size: 14px;
+  line-height: 20px;
+  font-family: $avenir_regular;
+}
+
+@mixin label-button-desktop {
+  font-size: 12px;
+  line-height: 20px;
+  font-family: $avenir_bold;
+}
+
+/*-------------------------------------Mobile Mixins-----------------------------------------*/
+
+@mixin page-header-mobile {
+  font-size: 23px;
+  line-height: 32px;
+  font-family: $avenir_regular;
+}
+
+@mixin section-header-mobile {
+  font-size: 24px;
+  line-height: 32px;
+  font-family: $avenir_regular;
+}
+
+@mixin subheader-mobile {
+  font-size: 14px;
+  line-height: 22px;
+  font-family: $avenir_demi;
+}
+
+@mixin body-copy-mobile {
+  font-size: 13px;
+  line-height: 18px;
+  font-family: $avenir_regular;
+}
+
+@mixin footer-copy-mobile {
+  font-size: 13px;
+  line-height: 18px;
+  font-family: $avenir_regular;
+}
+
+@mixin label-button-desktop {
+  font-size: 10px;
+  line-height: 20px;
+  font-family: $avenir_bold;
+}

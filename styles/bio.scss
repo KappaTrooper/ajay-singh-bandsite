@@ -1,0 +1,495 @@
+@use "partials/variables" as *;
+@use "partials/mixins" as *;
+@use "partials/font" as *;
+
+body {
+  background-color: $white;
+  margin: 0;
+  padding: 0;
+  //   overflow-x: hidden;
+}
+
+nav {
+  color: $white;
+}
+
+.nav-item {
+  background-color: $bandsite-black;
+  padding-bottom: 0.1px;
+
+  &__header {
+    margin: 0 auto;
+    padding-top: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__link {
+    list-style: none;
+    display: flex;
+    justify-content: space-evenly;  
+    padding: 0;
+  }
+
+  &__links {
+    padding-bottom: 0.7rem;
+    
+  }
+
+  .nav-item__navlink {
+    color: white;
+    text-decoration: none;
+    @include subheader-mobile;
+    font-size: 15px;
+    position: relative;
+    
+    
+  }
+
+  li:first-child {
+    border-bottom: 2px solid $white;
+  }
+
+  li:first-child::after {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: 1500%;
+    left: -3.125rem;
+    width: 200%;
+    height: .25rem;
+    background-color: $white;
+  }
+}
+
+@media screen and (min-width: 767px) {
+  .nav-item {
+    padding-bottom: 3%;
+
+    &__header {
+      display: inline-block;
+      padding-left: 4%;
+    }
+
+    &__link {
+      display: flex;
+      justify-content: space-around;
+      gap: 2.5rem;
+      position: absolute;
+      top: 0.5%;
+      left: 150px;
+      padding-left: 5%;
+    }
+
+    li:first-child::after {
+      content: '';
+      display: block;
+      position: absolute;
+      bottom: -0.875rem;
+      left: 3.5rem;
+      width: 35%;
+      height: .25rem;
+      background-color: $white;
+    }
+    li:first-child {
+      border-bottom: 1px solid $bandsite-black;
+    }
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .nav-item {
+    padding-bottom: 3%;
+
+    &__header {
+      display: inline-block;
+      padding-left: 10%;
+    }
+
+    &__link {
+      left: 20%;
+    }
+
+    
+
+    li:first-child::after {
+      content: '';
+      display: block;
+      position: absolute;
+      bottom: -30px;
+      left: 65px;
+      width: 35%;
+      height: .25rem;
+      background-color: $white;
+    }
+
+  }
+}
+
+/*-------------------------------------Hero Image-----------------------------------------*/
+
+.hero-image {
+  background-position: center;
+  background-size: cover;
+  background-image: url(../assets/Images/hero-bio.jpg);
+  height: 20vh;
+  width: 100vw;
+  margin: 0 auto;
+  position: relative;
+
+  &__header {
+    text-align: center;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 20vh;
+    padding-left: 10px;
+    font-family: $avenir_demi;
+    font-size: 24px;
+    color: $white;
+    
+    
+  }
+
+  
+
+  &__overlay {
+    height: 20vh;
+    width: 100vw;
+    background-color: $bandsite-black;
+    opacity: 50%;
+    display: flex;
+    z-index: 1;
+    
+  }
+
+ 
+}
+
+.hero-text {
+  position: relative;
+  z-index: 2;
+}
+
+
+@media screen and (min-width: 767px) {
+  .hero-image {
+    height: 30vh;
+    &__header {
+      padding-left: 20px;
+      @include section-header-desktop;
+      font-size: 45px;
+    }
+  }
+
+  .hero-image__overlay {
+    height: 30vh;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .hero-image {
+
+    height: 35vh;
+  
+  
+    &__header {
+    
+      height: 30vh;
+      padding-left: 250px;
+      @include section-header-desktop;
+      font-family: $avenir_demi;
+      z-index: 1;
+      
+      color: $white;
+      
+    }
+
+    &__overlay {
+      height: 35vh;
+      
+    }
+
+}
+}
+
+
+/*-------------------------------------Main Section-----------------------------------------*/
+
+.main-section {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding: 16px;
+
+  &__header {
+    @include section-header-mobile;
+    font-family: $avenir_demi;
+    text-align: left;
+  }
+
+  & img {
+    width: 100%;
+    height: auto;
+    padding-bottom: 1rem;
+  }
+
+  &__quote {
+    font-family: AvenirDemi;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 0.625rem;
+  }
+
+  &__paragraph-header {
+    @include subheader-mobile;
+    font-family: $avenir_demi;
+    text-align: left;
+    margin-bottom: -5px;
+  }
+
+  &__paragraph {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    @include body-copy-mobile;
+    text-align: justify;
+    gap: 5px;
+  }
+}
+
+@media screen and (min-width: 767px) {
+  .main-section {
+    padding: 1.5rem 10% 0;
+
+    & img {
+      width: 50vh;
+      height: 30vh;
+      margin: 0 auto;
+    }
+
+    &__paragraph-header {
+      @include subheader-desktop;
+    }
+
+    &__paragraph {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+      gap: 30px;
+      
+    }
+
+    &__paragraph-one {
+      line-height: 22px;
+    }
+    &__paragraph-two {
+      line-height: 20px;
+    }
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .main-section {
+    padding: 0.5rem 20% 0;
+
+    & img {
+      width: 60vh;
+      height: 40vh;
+    }
+    &__quote {
+      text-align: left;
+      width: 50%;
+
+      gap: 0.625rem;
+    }
+    &__paragraph-one {
+      line-height: 20px;
+    }
+    &__paragraph-two {
+      line-height: 20px;
+    }
+  }
+}
+
+/*-------------------------------------Gallery-----------------------------------------*/
+
+.photo {
+  margin: 0 auto;
+  background-color: $alabaster;
+}
+.photo-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  &__header {
+    width: 98%;
+    margin: 0 auto;
+    @include subheader-mobile;
+    font-size: 25px;
+    padding-top: 25px;
+    padding-bottom: 10px;
+  }
+
+  &__row {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 4px;
+  }
+  &__column {
+    flex: 100%;
+    max-width: 100%;
+    padding: 0 4px;
+  }
+
+  &__column img {
+    margin-top: 8px;
+    vertical-align: middle;
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 767px) {
+  .photo-gallery {
+    width: 80%;
+    margin: 0 auto;
+
+    &__column {
+      flex: 25%;
+      max-width: 55%;
+      padding: 0 4px;
+    }
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .photo {
+    padding-bottom: 20px;
+
+    &__photo-gallery {
+      width: 50%;
+      
+    }
+  }
+}
+
+
+/*-------------------------------------Diving Deeper - gallery Hover----------------------------------------*/
+
+.photo {
+  & img {
+  
+    filter: grayscale(1)
+  }
+
+  & img:hover {
+    filter: none;
+  }
+}
+
+/*-------------------------------------Footer Starts----------------------------------------*/
+
+.footer {
+  background-color: $bandsite-black;
+  color: $white;
+}
+
+.footer-item {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem;
+
+  &__header--top {
+    @include subheader-mobile;
+    font-size: 25px;
+  }
+
+  &__icons {
+    display: flex;
+    flex-direction: row;
+    gap: 7.5%;
+  }
+
+  &__top {
+    @include subheader-mobile;
+  }
+
+  &__middle,
+  &__bottom {
+    @include footer-copy-mobile;
+    
+  }
+
+  & a {
+    text-decoration: none;
+    color: $white
+  }
+
+  &__mobilefooterlogo {
+    @include page-header-mobile;
+    text-transform: uppercase;
+  }
+
+  &__copywrite {
+    @include footer-copy-mobile;
+  }
+}
+
+@media screen and (min-width: 767px) {
+  .footer-item {
+    gap: 50px;
+
+    position: relative;
+
+    &__header {
+      display: flex;
+      flex-direction: row;
+      gap: 50px;
+      
+    }
+    &__header--top {
+      @include subheader-desktop;
+      font-size: 33px;
+    }
+
+    &__icons {
+      gap: 25px;
+    }
+
+    &__sponsors {
+      display: flex;
+      gap: 5.625rem;
+      margin-top: -50px;
+    }
+    &__mobilefooterlogo {
+      position: absolute;
+      left: 80%;
+      top: 4%;
+    }
+
+    &__copywrite {
+      @include footer-copy-desktop;
+    }
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .footer-item {
+  left: 10%;
+  gap: 28px;
+
+  &__copywrite {
+   
+  }
+
+    &__mobilefooterlogo {
+      
+      left: 70%;
+      
+    }
+  }
+}
+
