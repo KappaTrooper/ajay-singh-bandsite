@@ -11,34 +11,40 @@
 
     <link rel="stylesheet" href="styles/bio.css" />
     <link rel="shortcut icon" href="assets/Icons/SVG/favicon.ico"image/x-icon">
+    <script src="scripts/index-page.js" defer></script>
 
     <title>Bandsite</title>
   </head>
   <body>
+    <!-- /*-------------------------------------Nav Bar-----------------------------------------*/ -->
+
     <nav class="nav-item">
-      <a href="index.html">
+      <div class="nav-item__logo">
         <img
           src="assets/Logo/Logo-bandsite.svg"
           alt="main-logo"
           class="nav-item__header"
         />
-      </a>
-      <ul class="nav-item__link">
-        <li class="nav-item__links">
-          <a href="#" class="nav-item__navlink">Biography</a>
-        </li>
-        <li class="nav-item__links">
-          <a href="#" class="nav-item__navlink">Shows</a>
-        </li>
-      </ul>
+      </div>
+
+      <div class="nav-item__link">
+        <div class="nav-item__link--item">
+          <a href="#" class="nav-item__navlink--bio">Biography</a>
+          <hr />
+        </div>
+
+        <div class="nav-item__link--item">
+          <a href="#" class="nav-item__navlink--show">Shows</a>
+        </div>
+      </div>
     </nav>
 
     <!-- /*-------------------------------------Hero Image-----------------------------------------*/ -->
 
     <div class="hero-image">
-      <div class="hero-image__overlay"></div>
-
-      <h1 class="hero-image__header">The Bee Knees</h1>
+      <div class="hero-image__overlay">
+        <h1 class="hero-image__header">The Bee's Knees</h1>
+      </div>
     </div>
 
     <!-- /*-------------------------------------Main Section-----------------------------------------*/ -->
@@ -109,81 +115,157 @@
       </div>
     </section>
 
-    <!-- /*----------------------------------Comment section-----------------------------*/ -->
-    <section class="comment">
-      <!-- Box 1 -->
-      <!-- Flexbox 1 -->
-      <div class="comment-section">
-        <div class="comment-section__comment">
-          <!-- flexbox 2 -->
-          <div class="comment-section__avatarImage">
-            <img src="" alt="" class="avatar" />
-          </div>
-          <!-- flexbox 3 -->
-          <div class="comment-section__nameComment">
-            <div class="nameDate">
-              <!-- flexbox 3 -->
-              <h3 class="comment-section__name">Connor Walton</h3>
-              <p class="comment-section__date">02/17/2021</p>
-            </div>
+    <!-- /*----------------------------------------Form starts-----------------------------------------------*/ -->
 
-            <div class="comment-section__comment"><p class="comment-section__commentName">This is art. This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence. Let us appreciate this for what it is and what it contains.
 
-            </p>
+
+         
+
+        
+   <form class="Form"></form>
+      <div class="comment-form">
+           <div class="comment-form__avatar">
+             <img
+               src="assets/Images/Mohan-muruge.jpg"
+               alt="Avatar"
+               class="comment-form"
+             />
+           </div>
+     
+           <div class="comment-form__comment">
+             <div class="comment-form__top">
+               <div class="comment-form__name">
+
+                <label for="commentName" class="comment-form__text">First name:</label><br>
+                <input type="text" name="commentName" placeholder="Add your name" /><br>
+
+               </div>
+               
             </div>
+              <div class="comment-form__bottom">
+                    <label for="commentName" class="comment-form__text">Comment</label><br>
+                    <textarea name="bio" cols="20" rows="5" placeholder="Add your comment" ></textarea><br><br>
+                    <input type="submit" class="comment-form__submit">
+              </div>
           </div>
         </div>
-
-
-        <!-- Box 2 -->
-              <!-- Flexbox 1 -->
-      <div class="comment-section">
-        <div class="comment-section__comment">
-          <!-- flexbox 2 -->
-          <div class="comment-section__avatarImage">
-            <img src="" alt="" class="avatar" />
-          </div>
-          <!-- flexbox 3 -->
-          <div class="comment-section__nameComment">
-            <div class="nameDate">
-              <!-- flexbox 3 -->
-              <h3 class="comment-section__name">Emilie Beach</h3>
-              <p class="comment-section__date">01/09/2021</p>
-            </div>
-
-            <div class="comment-section__comment"><p class="comment-section__commentName">I feel blessed to have seen them in person. What a show! They were just perfection. If there was one day of my life I could relive, this would be it. What an incredible day.
-
-
-            </p></div>
-          </div>
-        </div>
-
-        <!-- Box 3 -->
-
-              <!-- Flexbox 1 -->
-      <div class="comment-section">
-        <div class="comment-section__comment">
-          <!-- flexbox 2 -->
-          <div class="comment-section__avatarImage">
-            <img src="" alt="" class="avatar" />
-          </div>
-          <!-- flexbox 3 -->
-          <div class="comment-section__nameComment">
-            <div class="nameDate">
-              <!-- flexbox 3 -->
-              <h3 class="comment-section__name">Miles Acosta</h3>
-              <p class="comment-section__date">12/20/2020</p>
-            </div>
-
-            <div class="comment-section__comment"><p class="comment-section__commentName">I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough.
-
-            </p></div>
-          </div>
-        </div>
-
-        <!-- End of 3rd box -->
+      </form>
+         
+        
       
+     
+
+
+
+
+    <!-- /*----------------------------------Comment section starts-----------------------------*/ -->
+
+    <!-- Testing DOM Comment -->
+     <hr class="comment-divider" />
+    <section class="comment-item">
+      <div class="comment-item__avatar">
+        <img
+          src="assets/Images/Mohan-muruge.jpg"
+          alt="Avatar"
+          class="comment-item__avatarimg"
+        />
+      </div>
+
+      <div class="comment-item__comment">
+        <div class="comment-item__top">
+          <div class="comment-item__name" id="comment-name">Connor Walton</div>
+          <div class="comment-item__date" id="comment-date">02/17/2021</div>
+        </div>
+        <div class="comment-item__bottom" id="comment">
+          This is art. This is inexplicable magic expressed in the purest way,
+          everything that makes up this majestic work deserves reverence. Let us
+          appreciate this for what it is and what it contains.
+        </div>
+      </div>
     </section>
+    
+    
+    
+    
+    
+    
+    
+ <!-- first comment -->
+    <hr class="comment-divider" />
+    <section class="comment-item">
+      <div class="comment-item__avatar">
+        <img
+          src="assets/Images/Mohan-muruge.jpg"
+          alt="Avatar"
+          class="comment-item__avatarimg"
+        />
+      </div>
+
+      <div class="comment-item__comment">
+        <div class="comment-item__top">
+          <div class="comment-item__name">Connor Walton</div>
+          <div class="comment-item__date">02/17/2021</div>
+        </div>
+        <div class="comment-item__bottom">
+          This is art. This is inexplicable magic expressed in the purest way,
+          everything that makes up this majestic work deserves reverence. Let us
+          appreciate this for what it is and what it contains.
+        </div>
+      </div>
+    </section>
+    <hr class="comment-divider" />
+
+    <!-- second comment -->
+
+    <section class="comment-item">
+      <div class="comment-item__avatar">
+        <img
+          src="assets/Images/emilie.jpg"
+          alt="Avatar"
+          class="comment-item__avatarimg"
+        />
+      </div>
+
+      <div class="comment-item__comment">
+        <div class="comment-item__top">
+          <div class="comment-item__name">Emilie Beach</div>
+          <div class="comment-item__date">01/09/2021</div>
+        </div>
+        <div class="comment-item__bottom">
+          I feel blessed to have seen them in person. What a show! They were
+          just perfection. If there was one day of my life I could relive, this
+          would be it. What an incredible day.
+        </div>
+      </div>
+    </section>
+    <hr class="comment-divider" />
+
+    <!-- Third Comment -->
+
+    <section class="comment-item">
+      <div class="comment-item__avatar">
+        <img
+          src="assets/Images/Mohan-muruge.jpg"
+          alt="Avatar"
+          class="comment-item__avatarimg"
+        />
+      </div>
+
+      <div class="comment-item__comment">
+        <div class="comment-item__top">
+          <div class="comment-item__name">Miles Acosta</div>
+          <div class="comment-item__date">12/20/2020</div>
+        </div>
+        <div class="comment-item__bottom">
+          I can't stop listening. Every time I hear one of their songs - the
+          vocals - it gives me goosebumps. Shivers straight down my spine. What
+          a beautiful expression of creativity. Can't get enough.
+        </div>
+      </div>
+    </section>
+    <hr class="comment-divider" />
+
+    <!-- /*----------------------------------Comment section ends-----------------------------*/ -->
 
     <!-- Footer section -->
 
@@ -271,4 +353,3 @@
     </footer>
   </body>
 </html>
-
