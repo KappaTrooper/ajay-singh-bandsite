@@ -34,7 +34,7 @@
         </div>
 
         <div class="nav-item__link--item">
-          <a href="#" class="nav-item__navlink--show">Shows</a>
+          <a href="shows.html" class="nav-item__navlink--show">Shows</a>
         </div>
       </div>
     </nav>
@@ -117,80 +117,48 @@
 
     <!-- /*----------------------------------------Form starts-----------------------------------------------*/ -->
 
+    <form class="form">
+      <div class="comment-form">
+        <div class="comment-form__avatar">
+          <img
+            src="assets/Images/Mohan-muruge.jpg"
+            alt="Avatar"
+            class="comment-form"
+          />
+        </div>
 
-
+        <div class="comment-form__comment">
+          
+            <div class="comment-form__name">
+              <label for="commentName" class="comment-form__text">First name:</label>
+            <br/>
+              <input
+                type="text"
+                name="commentName"
+                placeholder="Add your name"/>
+                <br />
+            </div>
          
 
-        
-   <form class="Form"></form>
-      <div class="comment-form">
-           <div class="comment-form__avatar">
-             <img
-               src="assets/Images/Mohan-muruge.jpg"
-               alt="Avatar"
-               class="comment-form"
-             />
-           </div>
-     
-           <div class="comment-form__comment">
-             <div class="comment-form__top">
-               <div class="comment-form__name">
-
-                <label for="commentName" class="comment-form__text">First name:</label><br>
-                <input type="text" name="commentName" placeholder="Add your name" /><br>
-
-               </div>
-               
-            </div>
-              <div class="comment-form__bottom">
-                    <label for="commentName" class="comment-form__text">Comment</label><br>
-                    <textarea name="bio" cols="20" rows="5" placeholder="Add your comment" ></textarea><br><br>
-                    <input type="submit" class="comment-form__submit">
-              </div>
+          <div class="comment-form__comment">
+            <label for="commentName" class="comment-form__text">Comment</label>
+            <br />
+            <textarea
+              name="bio"
+              cols="20"
+              rows="5"
+              placeholder="Add your comment"
+            ></textarea>
+            <br /><br />
+            <input type="submit" class="comment-form__submit" value="COMMENT" />
           </div>
         </div>
-      </form>
-         
-        
-      
-     
-
-
-
+      </div>
+    </form>
 
     <!-- /*----------------------------------Comment section starts-----------------------------*/ -->
 
-    <!-- Testing DOM Comment -->
-     <hr class="comment-divider" />
-    <section class="comment-item">
-      <div class="comment-item__avatar">
-        <img
-          src="assets/Images/Mohan-muruge.jpg"
-          alt="Avatar"
-          class="comment-item__avatarimg"
-        />
-      </div>
-
-      <div class="comment-item__comment">
-        <div class="comment-item__top">
-          <div class="comment-item__name" id="comment-name">Connor Walton</div>
-          <div class="comment-item__date" id="comment-date">02/17/2021</div>
-        </div>
-        <div class="comment-item__bottom" id="comment">
-          This is art. This is inexplicable magic expressed in the purest way,
-          everything that makes up this majestic work deserves reverence. Let us
-          appreciate this for what it is and what it contains.
-        </div>
-      </div>
-    </section>
-    
-    
-    
-    
-    
-    
-    
- <!-- first comment -->
+    <!-- first comment -->
     <hr class="comment-divider" />
     <section class="comment-item">
       <div class="comment-item__avatar">
@@ -203,13 +171,19 @@
 
       <div class="comment-item__comment">
         <div class="comment-item__top">
-          <div class="comment-item__name">Connor Walton</div>
-          <div class="comment-item__date">02/17/2021</div>
+          <div class="comment-item__divname">
+            <span class="comment-item__name">Connor Walton</span>
+          </div>
+          <div class="comment-item__divdate">
+            <span class="comment-item__date">02/17/2021</span>
+          </div>
         </div>
         <div class="comment-item__bottom">
-          This is art. This is inexplicable magic expressed in the purest way,
-          everything that makes up this majestic work deserves reverence. Let us
-          appreciate this for what it is and what it contains.
+          <span class="comment-item__comment"
+            >This is art. This is inexplicable magic expressed in the purest
+            way, everything that makes up this majestic work deserves reverence.
+            Let us appreciate this for what it is and what it contains.</span
+          >
         </div>
       </div>
     </section>
@@ -228,13 +202,19 @@
 
       <div class="comment-item__comment">
         <div class="comment-item__top">
-          <div class="comment-item__name">Emilie Beach</div>
-          <div class="comment-item__date">01/09/2021</div>
+          <div class="comment-item__divname">
+            <span class="comment-item__name">Emilie Beach</span>
+          </div>
+          <div class="comment-item__divdate">
+            <span class="comment-item__date">01/09/2021</span>
+          </div>
         </div>
         <div class="comment-item__bottom">
-          I feel blessed to have seen them in person. What a show! They were
-          just perfection. If there was one day of my life I could relive, this
-          would be it. What an incredible day.
+          <span class="comment-item__comment">
+            I feel blessed to have seen them in person. What a show! They were
+            just perfection. If there was one day of my life I could relive,
+            this would be it. What an incredible day.</span
+          >
         </div>
       </div>
     </section>
@@ -253,13 +233,19 @@
 
       <div class="comment-item__comment">
         <div class="comment-item__top">
-          <div class="comment-item__name">Miles Acosta</div>
-          <div class="comment-item__date">12/20/2020</div>
+          <div class="comment-item__divname">
+            <span class="comment-item__name">Miles Acosta</span>
+          </div>
+          <div class="comment-item__divdate">
+            <span class="comment-item__date">12/20/2020</span>
+          </div>
         </div>
         <div class="comment-item__bottom">
-          I can't stop listening. Every time I hear one of their songs - the
-          vocals - it gives me goosebumps. Shivers straight down my spine. What
-          a beautiful expression of creativity. Can't get enough.
+          <span class="comment-item__comment">
+            I can't stop listening. Every time I hear one of their songs - the
+            vocals - it gives me goosebumps. Shivers straight down my spine.
+            What a beautiful expression of creativity. Can't get enough.</span
+          >
         </div>
       </div>
     </section>

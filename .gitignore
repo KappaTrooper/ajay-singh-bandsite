@@ -1,5 +1,2 @@
 .DS_store
 *.css.map
-*.testing.html
-*.testing.css
-*.testing.scss

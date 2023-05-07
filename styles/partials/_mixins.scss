@@ -73,3 +73,41 @@
   line-height: 20px;
   font-family: $avenir_bold;
 }
+
+
+@mixin shows-formating {
+  color: $bandsite-darkblack;
+  font-family: $avenir_regular;
+  font-size: 15px;
+  margin-top: 5px;
+}
+
+
+/*-----------------Global Mixins-----------------------*/
+
+@mixin avatar {
+  vertical-align: middle;
+  width: 36px;
+  height: 35px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+
+@mixin button-mobile {
+  font-family: $avenir_regular;
+  font-size: 10px;
+  line-height: 20px;
+  background-color: $bandsite-darkblack;
+  color: white;
+}
+
+
+
+@mixin button-desktop {
+  font-family: $avenir_regular;
+  font-size: 12px;
+  line-height: 20px;
+  background-color: $bandsite-darkblack;
+  color: white;
+}
