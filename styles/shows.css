@@ -16,6 +16,7 @@ body {
   background-color: #FFFFFF;
   margin: 0;
   padding: 0;
+  overflow-x: hidden;
 }
 
 nav {
@@ -29,7 +30,6 @@ nav {
   flex-direction: column;
   align-items: center;
   position: relative;
-  height: 9vh;
 }
 .nav-item__logo {
   padding-top: 10px;
@@ -38,15 +38,20 @@ nav {
 .nav-item__link {
   display: flex;
   gap: 40px;
-  height: 100%;
+  padding-bottom: 20px;
 }
-.nav-item .nav-item__link--item--special {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
+.nav-item__navlink--bio {
+  color: red;
 }
-.nav-item .nav-item__link--item--special {
-  border-bottom: 1px solid black;
+.nav-item .nav-item__link--item {
+  position: relative;
+}
+.nav-item div.nav-item__link--item hr {
+  width: 100%;
+  background-color: #E1E1E1;
+  position: absolute;
+  top: 140%;
+  height: 2px;
 }
 
 .nav-item__link--item a {
@@ -57,7 +62,7 @@ nav {
   font-family: "AvenirDemi";
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 767px) {
   .nav-item {
     display: flex;
     flex-direction: row;
@@ -77,6 +82,14 @@ nav {
     line-height: 32px;
   }
 }
+.nav-item div.nav-item__link--item hr {
+  width: 100%;
+  background-color: #E1E1E1;
+  position: absolute;
+  top: 130%;
+  height: 4px;
+}
+
 @media only screen and (min-width: 1280px) {
   .nav-item {
     gap: 50px;
@@ -90,7 +103,7 @@ nav {
 }
 /*-------------------------------------Hero Image Start-----------------------------------------*/
 .hero-image {
-  height: 30vh;
+  height: 35vh;
   width: 100%;
   position: relative;
   background-size: cover;
@@ -101,7 +114,7 @@ nav {
   font-family: "AvenirDemi";
   flex-direction: column;
   display: flex;
-  padding-top: 0.9375rem;
+  padding-top: 1.9375rem;
   padding-left: 1.25rem;
   top: 10px;
   color: #FFFFFF;
@@ -112,10 +125,58 @@ nav {
   width: 100%;
   background: rgba(0, 0, 0, 0.2);
 }
-.hero-image__embed {
-  width: 90;
+
+.soundcloud-container {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 56.25%;
 }
 
+.soundcloud-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 90%;
+  height: 50%;
+}
+
+@media only screen and (min-width: 767px) {
+  .hero-image {
+    height: 50vh;
+  }
+  .hero-image__top {
+    font-size: 24px;
+    line-height: 32px;
+    font-family: "AvenirDemi";
+  }
+  .hero-image__bottom {
+    font-size: 60px;
+    line-height: 68px;
+    font-family: "AvenirRegular";
+    font-family: "AvenirDemi";
+    position: absolute;
+    padding-top: 5%;
+  }
+  .hero-image__text {
+    padding-left: 30px;
+  }
+  .soundcloud-container iframe {
+    width: 60%;
+    height: 30%;
+    position: absolute;
+    padding-top: 15%;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  .hero-image {
+    height: 40.25rem;
+  }
+  .soundcloud-container iframe {
+    width: 60%;
+    height: 20%;
+  }
+}
 /*-------------------------------------Hero Image Ends-----------------------------------------*/
 .show-title {
   font-family: "AvenirDemi";
