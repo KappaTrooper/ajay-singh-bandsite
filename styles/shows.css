@@ -184,6 +184,13 @@ nav {
   padding-left: 5%;
 }
 
+.show-title {
+  font-size: 23px;
+  line-height: 32px;
+  font-family: "AvenirRegular";
+  font-family: "AvenirDemi";
+}
+
 .show-box {
   display: flex;
   flex-direction: column;
@@ -239,6 +246,12 @@ nav {
 }
 
 @media screen and (min-width: 767px) {
+  .show-title {
+    font-size: 30px;
+    line-height: 44px;
+    font-family: "AvenirRegular";
+    font-family: "AvenirDemi";
+  }
   .show-box {
     display: flex;
     flex-direction: row;

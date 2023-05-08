@@ -39,8 +39,18 @@ let showsItems = [
 
 const showSection = document.querySelector('.show-section'); 
 
+const showTitle = document.createElement('h3');
+showTitle.classList.add('show-title');
+showTitle.textContent = 'Shows';
+
+const firstShowBox = showSection.querySelector('.show-box');
+showSection.insertBefore(showTitle, firstShowBox);
+
 // --------------------  loop start -------------------- 
 showsItems.forEach(show => {
+
+
+  
   
   const showBox = document.createElement('div');
   showBox.classList.add('show-box');

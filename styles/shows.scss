@@ -211,6 +211,17 @@ nav {
   padding-left: 5%;
 }
 
+
+.show-title {
+  @include page-header-mobile;
+  font-family: $avenir_demi
+}
+
+
+
+
+
+
 .show-box {
   display: flex;
   flex-direction: column;
@@ -279,13 +290,19 @@ nav {
 
   @media screen and (min-width: 767px) {
 
+    .show-title {
+      @include section-header-desktop;
+      font-family: $avenir_demi;
+      
+    }
+
     .show-box {
       display: flex;
       flex-direction: row;
       justify-content: space-around;
       
       
-      
+ 
 
 
 
