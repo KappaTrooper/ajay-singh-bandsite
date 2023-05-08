@@ -305,11 +305,16 @@ nav {
   color: white;
   border: 1px solid #E1E1E1;
   border-radius: 4px;
-  height: 42px;
-  width: 100%;
+  height: 2.625rem;
+  width: 102%;
 }
 .comment-form__placeholder {
   font-family: "AvenirDemi";
+}
+
+label {
+  font-family: "AvenirDemi";
+  color: #323232;
 }
 
 input::-moz-placeholder {
@@ -324,14 +329,14 @@ input::placeholder {
 
 textarea::-moz-placeholder {
   font-family: "AvenirRegular";
-  padding-top: 10px;
-  padding-left: 12px;
+  padding-top: 0.625rem;
+  padding-left: 0.75rem;
 }
 
 textarea::placeholder {
   font-family: "AvenirRegular";
-  padding-top: 10px;
-  padding-left: 12px;
+  padding-top: 0.625rem;
+  padding-left: 0.75rem;
 }
 
 input[type=text] {
@@ -340,6 +345,8 @@ input[type=text] {
   border-radius: 4px;
   height: 2.25rem;
   width: 100%;
+  margin-top: 0.3125rem;
+  margin-bottom: 0.625rem;
 }
 
 textarea[name=bio] {
@@ -348,6 +355,7 @@ textarea[name=bio] {
   border-radius: 4px;
   height: 70px;
   width: 100%;
+  margin-top: 5px;
 }
 
 @media screen and (min-width: 767px) {
@@ -373,16 +381,26 @@ textarea[name=bio] {
     border-radius: 4px;
     height: 42px;
     width: 30%;
+    margin-left: 350px;
   }
   .comment-form__placeholder {
     font-family: "AvenirDemi";
+  }
+}
+@media screen and (min-width: 767px) and (min-width: 1279px) {
+  .comment-form {
+    margin: 0 30% 0;
+    gap: 30px;
+  }
+  .comment-form__submit {
+    margin-left: 310px;
   }
 }
 /*-------------------------------------Comments-----------------------------------------*/
 .comment-item {
   margin: 20px;
   display: flex;
-  justify-content: space-around;
+  justify-content: flex-start;
   gap: 10px;
 }
 .comment-item__top {
@@ -441,11 +459,11 @@ hr.comment-divider {
 }
 @media screen and (min-width: 1280px) {
   .comment-item {
-    margin: 0 32% 0;
+    margin: 0 30% 0;
   }
   hr.comment-divider {
     stroke-width: 1px;
-    width: 35%;
+    width: 40%;
   }
 }
 /*-------------------------------------Footer Starts----------------------------------------*/

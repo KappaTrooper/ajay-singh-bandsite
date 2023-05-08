@@ -1,0 +1,341 @@
+@use "partials/variables" as *;
+@use "partials/mixins" as *;
+@use "partials/font" as *;
+
+body {
+  background-color: $white;
+  margin: 0;
+  padding: 0;
+  
+}
+
+// Nav Bar Starts
+nav {
+  color: $white;
+  position: relative;
+}
+
+.nav-item {
+  background-color: $bandsite-black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  height: 9vh;
+
+  &__logo {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  &__link {
+    display: flex;
+    gap: 40px;
+    height: 100%;
+  }
+
+  .nav-item__link--item--special {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
+.nav-item__link--item--special {
+  border-bottom: 1px solid black;
+}
+
+
+}
+
+.nav-item__link--item a {
+  text-decoration: none;
+  color: white;
+  @include subheader-mobile;
+}
+
+@media only screen and (min-width: 768px) {
+  .nav-item {
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+
+    &__logo {
+      padding-top: 1.25rem;
+      padding-bottom: 1.25rem;
+      padding-left: 3%;
+    }
+
+    &__link {
+      padding-top: 20px;
+    }
+  }
+
+  .nav-item__link--item a {
+    font-family: $avenir_regular;
+    font-size: 14px;
+    line-height: 32px;
+  }
+}
+
+@media only screen and (min-width: 1280px) {
+  .nav-item {
+    gap: 50px;
+
+    &__logo {
+      padding-left: 10%;
+    }
+
+    &__link {
+      gap: 60px;
+    }
+  }
+}
+
+//   Nav bar ends
+
+/*-------------------------------------Hero Image Start-----------------------------------------*/
+.hero-image {
+  height: 30vh;
+  width: 100%;
+  position: relative;
+  background-size: cover;
+  background-position: 50% 50%;
+  background-image: url(../assets/Images/hero-shows.jpg);
+  //   background-image: url(../assets/Images/hero-bio.jpg);
+
+  &__text {
+    font-family: $avenir_demi;
+    flex-direction: column;
+    display: flex;
+    padding-top: 0.9375rem;
+    padding-left: 1.25rem;
+    top: 10px;
+    color: $white;
+    gap: 5px;
+  }
+
+  &__overlay {
+    height: 100%;
+    width: 100%;
+
+    background: rgba(0, 0, 0, 0.2);
+  }
+
+  &__embed {
+    width: 90;
+  }
+}
+/*-------------------------------------Hero Image Ends-----------------------------------------*/
+
+// shows
+
+.show-title {
+  font-family: $avenir_demi;
+  font-size: 1.5rem;
+  padding-left: 5%;
+}
+
+.show-box {
+  display: flex;
+  flex-direction: column;
+  
+
+  padding-left: 5%;
+  border-bottom: 1px solid $mercury;
+  margin-bottom: 1rem;
+
+  
+
+
+  &__header {
+        font-family: $avenir_demi;
+        font-size: 13px;
+        color: $silver;
+        margin: 0;
+      }
+
+  &__date {
+    @include shows-formating;
+    
+}
+&__venue {
+    @include shows-formating;
+
+    
+}
+&__location {
+    @include shows-formating;
+
+}
+
+  &__submit {
+    background-color: $bandsite-black;
+    color: $white;
+    margin-top: 1.5625rem;
+    padding: 10px 0px 10px 0px;
+    width: 90%;
+    border-radius: 5px;
+    font-family: $avenir_demi;
+    font-size: 14px;
+    border: none;
+    margin-bottom: 1rem;
+  }
+
+
+
+
+}
+
+
+.show-box {
+  background-color: $white;
+
+  &:hover { 
+    background-color: $alabaster;
+  }
+
+  &:active {
+    background-color: $mercury;
+  }
+
+
+}
+
+  @media screen and (min-width: 767px) {
+
+    .show-box {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      
+      
+      
+
+
+
+      &__submit {
+        width: 24%;
+      }
+
+      &__date {
+        @include shows-formating;
+        
+    }
+    &__venue {
+        @include shows-formating;
+        width: 10rem;
+    
+        
+    }
+    &__location {
+        @include shows-formating;
+        width: 15rem;
+    
+    }
+
+    &__submit {
+      
+    }
+      
+    }
+
+
+  }
+
+/*-------------------------------------Footer Starts----------------------------------------*/
+
+.footer {
+  background-color: $bandsite-black;
+  color: $white;
+}
+
+.footer-item {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem;
+
+  &__header--top {
+    @include subheader-mobile;
+    font-size: 25px;
+  }
+
+  &__icons {
+    display: flex;
+    flex-direction: row;
+    gap: 7.5%;
+  }
+
+  &__top {
+    @include subheader-mobile;
+  }
+
+  &__middle,
+  &__bottom {
+    @include footer-copy-mobile;
+  }
+
+  & a {
+    text-decoration: none;
+    color: $white;
+  }
+
+  &__mobilefooterlogo {
+    @include page-header-mobile;
+    text-transform: uppercase;
+  }
+
+  &__copywrite {
+    @include footer-copy-mobile;
+  }
+}
+
+@media screen and (min-width: 767px) {
+  .footer-item {
+    gap: 50px;
+
+    position: relative;
+
+    &__header {
+      display: flex;
+      flex-direction: row;
+      gap: 50px;
+    }
+    &__header--top {
+      @include subheader-desktop;
+      font-size: 33px;
+    }
+
+    &__icons {
+      gap: 25px;
+    }
+
+    &__sponsors {
+      display: flex;
+      gap: 5.625rem;
+      margin-top: -50px;
+    }
+    &__mobilefooterlogo {
+      position: absolute;
+      left: 80%;
+      top: 4%;
+    }
+
+    &__copywrite {
+      @include footer-copy-desktop;
+    }
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .footer-item {
+    left: 10%;
+    gap: 28px;
+
+    &__copywrite {
+    }
+
+    &__mobilefooterlogo {
+      left: 70%;
+    }
+  }
+}

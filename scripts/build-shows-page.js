@@ -37,16 +37,15 @@ let showsItems = [
 ]
 
 
-// Select the parent element where the show boxes will be appended
-const showSection = document.querySelector('.show-section');
+const showSection = document.querySelector('.show-section'); 
 
-// Loop through the showsItems array to create and append the show boxes
+// --------------------  loop start -------------------- 
 showsItems.forEach(show => {
-  // Create the show box element
+  
   const showBox = document.createElement('div');
   showBox.classList.add('show-box');
 
-  // Create the title elements for date, venue, and location
+  //-------------------- elements for date, venue, and location -------------------- 
   const dateTitle = document.createElement('div');
   dateTitle.classList.add('show-box__title');
   const dateHeader = document.createElement('p');
@@ -80,13 +79,15 @@ showsItems.forEach(show => {
   locationTitle.appendChild(locationHeader);
   locationTitle.appendChild(locationText);
 
-  // Create the buy ticket button element
+  // --------------------  Button creation start -------------------- 
   const buyTicketButton = document.createElement('input');
   buyTicketButton.setAttribute('type', 'submit');
   buyTicketButton.classList.add('show-box__submit');
   buyTicketButton.setAttribute('value', 'Buy Ticket');
 
-  // Append the title and button elements to the show box element
+
+  // --------------------  attachin tutle and button to showBox div -------------------- 
+  
   showBox.appendChild(dateTitle);
   showBox.appendChild(venueTitle);
   showBox.appendChild(locationTitle);

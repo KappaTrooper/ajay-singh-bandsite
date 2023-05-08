@@ -16,7 +16,6 @@ body {
   background-color: #FFFFFF;
   margin: 0;
   padding: 0;
-  overflow-x: hidden;
 }
 
 nav {
@@ -168,13 +167,21 @@ nav {
   margin-bottom: 1rem;
 }
 
+.show-box {
+  background-color: #FFFFFF;
+}
+.show-box:hover {
+  background-color: #FAFAFA;
+}
+.show-box:active {
+  background-color: #E1E1E1;
+}
+
 @media screen and (min-width: 767px) {
   .show-box {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    flex-grow: 1;
-    gap: 10%;
+    justify-content: space-around;
   }
   .show-box__submit {
     width: 24%;
