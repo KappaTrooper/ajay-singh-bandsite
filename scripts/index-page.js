@@ -24,6 +24,30 @@ let comment = [
 const form = document.querySelector('.form');
 const commentSection = document.querySelector('.comment-section');
 
+// Diving Deeper timestamp test 
+
+
+const timestamp = new Date();
+
+function timeSince(date) {
+  const now = new Date();
+  const seconds = Math.floor((now - date) / 1000);
+  const minutes = Math.floor(seconds / 60);
+  const hours = Math.floor(minutes / 60);
+  const days = Math.floor(hours / 24);
+
+  if (days > 0) {
+    return days + (days === 1 ? ' day ago' : ' days ago');
+  } else if (hours > 0) {
+    return hours + (hours === 1 ? ' hour ago' : ' hours ago');
+  } else if (minutes > 0) {
+    return minutes + (minutes === 1 ? ' minute ago' : ' minutes ago');
+  } else {
+    return 'Just now';
+  }
+}
+
+
 
 form.addEventListener('submit', (event) => {
   event.preventDefault();
@@ -53,7 +77,8 @@ form.addEventListener('submit', (event) => {
   const newComment = {
     name: name,
     comment: commentText,
-    date: date
+    date: date,
+    timestamp: timestamp // diving deeper timestamp
   };
   
   // array [0]
@@ -89,6 +114,10 @@ function updateComments() {
     const dateSpan = document.createElement('span');
     const bottomDiv = document.createElement('div');
     const commentSpan = document.createElement('span');
+    dateSpan.innerHTML = item.date; // diving deeper
+    const timeDifferenceSpan = document.createElement('span'); // diving deepr 2
+
+
 
 
   //create element -------------------- end -------------------- 
@@ -107,6 +136,8 @@ function updateComments() {
     dateSpan.className = 'comment-item__date';
     bottomDiv.className = 'comment-item__bottom';
     commentSpan.className = 'comment-item__comment';
+    timeDifferenceSpan.className = 'comment-item__time-difference'; // diving deeper
+
     
     // grey image 
     avatarImg.src = 'assets/Images/grey.jpeg';
@@ -129,6 +160,11 @@ function updateComments() {
     commentItem.appendChild(commentDiv);
     commentSection.appendChild(hr);
     commentSection.appendChild(commentItem);
+    dateSpan.innerHTML = timeSince(item.timestamp); // diving deeper
+    dateDiv.appendChild(timeDifferenceSpan); // diving deeper
+ 
+
+
   });
 }
 
