@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<!-- saved from url=(0055)https://fiddle.jshell.net/_display/?editor_console=true -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <title></title>
+  
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="googlebot" content="noindex, nofollow">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <script type="text/javascript" src="./dummy.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="./result-light.css">
+
+
+  <style id="compiled-css" type="text/css">
+    
+
+    /* EOS */
+  </style>
+
+  <script id="insert"></script>
+
+    <script src="./stringify.js" charset="utf-8"></script>
+    <script>
+      const customConsole = (w) => {
+        const pushToConsole = (payload, type) => {
+          w.parent.postMessage({
+            console: {
+              payload: stringify(payload),
+              type:    type
+            }
+          }, "*")
+        }
+
+        w.onerror = (message, url, line, column) => {
+          // the line needs to correspond with the editor panel
+          // unfortunately this number needs to be altered every time this view is changed
+          line = line - 70
+          if (line < 0){
+            pushToConsole(message, "error")
+          } else {
+            pushToConsole(`[${line}:${column}] ${message}`, "error")
+          }
+        }
+
+        let console = (function(systemConsole){
+          return {
+            log: function(){
+              let args = Array.from(arguments)
+              pushToConsole(args, "log")
+              systemConsole.log.apply(this, args)
+            },
+            info: function(){
+              let args = Array.from(arguments)
+              pushToConsole(args, "info")
+              systemConsole.info.apply(this, args)
+            },
+            warn: function(){
+              let args = Array.from(arguments)
+              pushToConsole(args, "warn")
+              systemConsole.warn.apply(this, args)
+            },
+            error: function(){
+              let args = Array.from(arguments)
+              pushToConsole(args, "error")
+              systemConsole.error.apply(this, args)
+            },
+            system: function(arg){
+              pushToConsole(arg, "system")
+            },
+            clear: function(){
+              systemConsole.clear.apply(this, {})
+            },
+            time: function(){
+              let args = Array.from(arguments)
+              systemConsole.time.apply(this, args)
+            },
+            assert: function(assertion, label){
+              if (!assertion){
+                pushToConsole(label, "log")
+              }
+
+              let args = Array.from(arguments)
+              systemConsole.assert.apply(this, args)
+            }
+          }
+        }(window.console))
+
+        window.console = { ...window.console, ...console }
+
+        console.system("Running fiddle")
+      }
+
+      if (window.parent){
+        customConsole(window)
+      }
+    </script>
+</head>
+<body>
+    
+
+  
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Building components</title>
+
+    <link rel="stylesheet" href="./styles.css">
+  
+  
+    <div id="root">
+    
+    <header>
+      <h1>🐶 PetBook 😺</h1>
+    </header>
+  
+    <main>
+      <h2>Pets</h2>
+      
+    <div class="pet-item">
+      <img class="pet-item__image" src="./mickey.png">
+      <h2>Mickey</h2>
+      <p>some kind of fish</p>
+    </div>
+  
+    <div class="pet-item">
+      <img class="pet-item__image" src="./mickey.png">
+      <h2>Mickey</h2>
+      <p>some kind of fish</p>
+    </div>
+  
+    <div class="pet-item">
+      <img class="pet-item__image" src="./mickey.png">
+      <h2>Mickey</h2>
+      <p>some kind of fish</p>
+    </div>
+  
+    <div class="pet-item">
+      <img class="pet-item__image" src="./skatina.png">
+      <h2>Skatina</h2>
+      <p>Scumbag orange tabby??!?!!</p>
+    </div>
+  
+    </main>
+  </div>
+    <script src="./script.js"></script>
+  
+
+
+
+    <script type="text/javascript">//<![CDATA[
+
+
+// create a component for the whole page
+//  HomePage
+//  -- PageHeader
+//  -- PetItem(s)
+ 
+function PetsPage(pets) {
+  let petHtml = "";
+
+  // call the PetItem function with each pet in the array
+  for (const p of pets) {
+    petHtml += PetItem(p);
+  }
+
+  return `
+    ${PageHeader("🐶 PetBook 😺")}
+    <main>
+      <h2>Pets</h2>
+      ${petHtml}
+    </main>
+  `;
+}
+
+// create a function for the component
+function PageHeader(pageTitle) {
+  // job of a component:
+  // return the component as an HTML string
+  return `
+    <header>
+      <h1>${pageTitle}</h1>
+    </header>
+  `;
+}
+
+// make our PetItem reusable
+function PetItem(pet) {
+  const { name, description, imageSrc } = pet;
+
+  return `
+    <div class="pet-item">
+      <img class="pet-item__image" src="${imageSrc}" />
+      <h2>${name}</h2>
+      <p>${description}</p>
+    </div>
+  `;
+}
+
+const skatina = {
+  name: "Skatina",
+  description: "Scumbag orange tabby??!?!!",
+  imageSrc: "./images/skatina.png",
+};
+
+const mickey = {
+  name: "Mickey",
+  description: "some kind of fish",
+  imageSrc: "./images/mickey.png",
+};
+
+// select the parent element
+const rootElement = document.getElementById("root");
+
+// call the function
+// set the innerHTML of the parent
+rootElement.innerHTML = PetsPage([mickey, mickey, mickey, skatina]);
+
+
+  //]]></script>
+
+  <script>
+    // tell the embed parent frame the height of the content
+    if (window.parent && window.parent.parent){
+      window.parent.parent.postMessage(["resultsFrame", {
+        height: document.body.getBoundingClientRect().height,
+        slug: ""
+      }], "*")
+    }
+
+    // always overwrite window.name, in case users try to set it manually
+    window.name = "result"
+  </script>
+
+    <script>
+      let allLines = []
+
+      window.addEventListener("message", (message) => {
+        if (message.data.console){
+          let insert = document.querySelector("#insert")
+          allLines.push(message.data.console.payload)
+          insert.innerHTML = allLines.join(";\r")
+
+          let result = eval.call(null, message.data.console.payload)
+          if (result !== undefined){
+            console.log(result)
+          }
+        }
+      })
+    </script>
+
+
+
+</body></html>

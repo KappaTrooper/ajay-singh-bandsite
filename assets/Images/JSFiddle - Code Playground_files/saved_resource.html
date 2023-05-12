@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<!-- saved from url=(0041)https://jsfiddle.net/6krmto1h/5/embedded/ -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    
+    <meta http-equiv="edit-Type" edit="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>JSFiddle</title>
+
+      <meta name="robots" content="index, follow">
+      <meta name="googlebot" content="index, follow">
+
+      <script type="text/javascript">
+        var height
+        var force_height = null
+        var slug = "6krmto1h"
+        var show_src = "//fiddle.jshell.net/6krmto1h/5/show/light/"
+        var resize_element_counter = 0
+        var shell_edit_url = "/6krmto1h/5/light/"
+
+      </script>
+
+      <script src="./highlight.pack.js"></script>
+      <script src="./embed.js"></script>
+      <link rel="stylesheet" media="screen" href="./embed-light.css">
+
+    <style type="text/css" media="screen">
+    /* */</style>
+
+  </head>
+  <body>
+    <div id="full-embed">
+        <header>
+          <h1>
+            <a href="https://jsfiddle.net/6krmto1h/5/" target="_blank">
+              <svg width="34" height="40">
+      <use xlink:href="//jsfiddle.net/sprite.svg#logo"></use>
+    </svg>Edit in JSFiddle
+            </a>
+          </h1>
+          <div id="actions">
+            <ul class="normalRes">
+                <li class="active">
+                  <a data-trigger-type="js" href="https://jsfiddle.net/6krmto1h/5/embedded/#JavaScript">JavaScript</a>
+                </li>
+                <li class="">
+                  <a data-trigger-type="html" href="https://jsfiddle.net/6krmto1h/5/embedded/#HTML">HTML</a>
+                </li>
+                <li class="">
+                  <a data-trigger-type="css" href="https://jsfiddle.net/6krmto1h/5/embedded/#CSS">CSS</a>
+                </li>
+                <li class="">
+                  <a data-trigger-type="result" href="https://jsfiddle.net/6krmto1h/5/embedded/#Result">Result</a>
+                </li>
+            </ul>
+            <div class="hl" style="left: 0px; width: 87.6997px;"></div>
+          </div>
+        </header>
+
+        <div id="tabs">
+              <pre class="tCont JavaScript active hljs"><span class="hljs-comment">// create a component for the whole page</span>
+<span class="hljs-comment">//  HomePage</span>
+<span class="hljs-comment">//  -- PageHeader</span>
+<span class="hljs-comment">//  -- PetItem(s)</span>
+ 
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">PetsPage</span>(<span class="hljs-params">pets</span>) </span>{
+  <span class="hljs-keyword">let</span> petHtml = <span class="hljs-string">""</span>;
+
+  <span class="hljs-comment">// call the PetItem function with each pet in the array</span>
+  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">const</span> p <span class="hljs-keyword">of</span> pets) {
+    petHtml += PetItem(p);
+  }
+
+  <span class="hljs-keyword">return</span> <span class="hljs-string">`
+    <span class="hljs-subst">${PageHeader(<span class="hljs-string">"🐶 PetBook 😺"</span>)}</span>
+    &lt;main&gt;
+      &lt;h2&gt;Pets&lt;/h2&gt;
+      <span class="hljs-subst">${petHtml}</span>
+    &lt;/main&gt;
+  `</span>;
+}
+
+<span class="hljs-comment">// create a function for the component</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">PageHeader</span>(<span class="hljs-params">pageTitle</span>) </span>{
+  <span class="hljs-comment">// job of a component:</span>
+  <span class="hljs-comment">// return the component as an HTML string</span>
+  <span class="hljs-keyword">return</span> <span class="hljs-string">`
+    &lt;header&gt;
+      &lt;h1&gt;<span class="hljs-subst">${pageTitle}</span>&lt;/h1&gt;
+    &lt;/header&gt;
+  `</span>;
+}
+
+<span class="hljs-comment">// make our PetItem reusable</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">PetItem</span>(<span class="hljs-params">pet</span>) </span>{
+  <span class="hljs-keyword">const</span> { name, description, imageSrc } = pet;
+
+  <span class="hljs-keyword">return</span> <span class="hljs-string">`
+    &lt;div class="pet-item"&gt;
+      &lt;img class="pet-item__image" src="<span class="hljs-subst">${imageSrc}</span>" /&gt;
+      &lt;h2&gt;<span class="hljs-subst">${name}</span>&lt;/h2&gt;
+      &lt;p&gt;<span class="hljs-subst">${description}</span>&lt;/p&gt;
+    &lt;/div&gt;
+  `</span>;
+}
+
+<span class="hljs-keyword">const</span> skatina = {
+  <span class="hljs-attr">name</span>: <span class="hljs-string">"Skatina"</span>,
+  <span class="hljs-attr">description</span>: <span class="hljs-string">"Scumbag orange tabby??!?!!"</span>,
+  <span class="hljs-attr">imageSrc</span>: <span class="hljs-string">"./images/skatina.png"</span>,
+};
+
+<span class="hljs-keyword">const</span> mickey = {
+  <span class="hljs-attr">name</span>: <span class="hljs-string">"Mickey"</span>,
+  <span class="hljs-attr">description</span>: <span class="hljs-string">"some kind of fish"</span>,
+  <span class="hljs-attr">imageSrc</span>: <span class="hljs-string">"./images/mickey.png"</span>,
+};
+
+<span class="hljs-comment">// select the parent element</span>
+<span class="hljs-keyword">const</span> rootElement = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"root"</span>);
+
+<span class="hljs-comment">// call the function</span>
+<span class="hljs-comment">// set the innerHTML of the parent</span>
+rootElement.innerHTML = PetsPage([mickey, mickey, mickey, skatina]);</pre>
+              <pre class="tCont HTML hljs"><span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-meta-keyword">html</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">html</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">"en"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">"UTF-8"</span> /&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">http-equiv</span>=<span class="hljs-string">"X-UA-Compatible"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"IE=edge"</span> /&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"viewport"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"width=device-width, initial-scale=1.0"</span> /&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>Building components<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"stylesheet"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"./css/styles.css"</span> /&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"root"</span>&gt;</span>
+      <span class="hljs-comment">&lt;!-- Add content here --&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"./script.js"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
+</pre>
+              <pre class="tCont CSS hljs"></pre>
+              <div class="tCont result " id="result">
+              </div>
+        </div>
+    </div>
+    
+  
+
+</body></html>
