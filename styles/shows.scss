@@ -17,12 +17,16 @@ nav {
   position: relative;
 }
 
-.nav-item {
+.nav-item{
   background-color: $bandsite-black;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  position: relative;
+ 
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+  }
 
   &__logo {
     padding-top: 10px;
@@ -61,15 +65,18 @@ nav {
 
 @media only screen and (min-width: 767px) {
   .nav-item {
-    display: flex;
-    flex-direction: row;
-    gap: 50px;
+    
+    &__container {
+      display: flex;
+      flex-direction: row;
+      gap: 50px;
+    }
 
 
     &__logo {
       padding-top: 1.25rem;
       padding-bottom: 1.25rem;
-      padding-left: 3%;
+      padding-left: 4%;
     }
 
     &__link {
@@ -96,17 +103,23 @@ nav {
 
 @media only screen and (min-width: 1280px) {
   .nav-item {
+    
     gap: 50px;
 
-    &__logo {
-      padding-left: 10%;
+    &__container{
+      max-width: 1280px;
+      margin: auto;
+      padding: auto;
     }
+
 
     &__link {
       gap: 60px;
     }
   }
 }
+
+
 //   Nav bar ends
 
 /*-------------------------------------Hero Image Start-----------------------------------------*/
@@ -151,13 +164,13 @@ nav {
   padding-bottom: 36.25%; 
 }
 
-// .soundcloud-container iframe {
-//   position: absolute;
-//   top: 0;
-//   left: 0;
-//   width: 90%;
-//   height: 50%;
-// }
+.soundcloud-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 90%;
+  height: 50%;
+}
 
 @media only screen and (min-width: 767px) {
 
@@ -208,6 +221,15 @@ nav {
     width: 60%;
     height: 20%;
    
+  }
+ }
+
+ @media only screen and (min-width: 1280px) {
+  .hero-image  {
+   &__text{
+    max-width: 1280px;
+    margin: auto;
+   }
   }
  }
 

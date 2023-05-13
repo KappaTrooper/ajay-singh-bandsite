@@ -1,40 +1,5 @@
-let showsItems = [
-    {
-        "date": "Mon Sept 06 2021",
-        "venue": "Ronald Lane",
-        "location": "San Francisco, CA"
-      },
 
-      {
-        "date": "Tue Sept 21 2021",
-        "venue": "Pier 3 East",
-        "location": "San Francisco, CA"
-      },
-
-      {
-        "date": "Fri Oct 15 2021",
-        "venue": "View Lounge",
-        "location": "San Francisco, CA"
-      },
-
-      {
-        "date": "Sat Nov 06 2021",
-        "venue": "Hyatt Agency",
-        "location": "San Francisco, CA"
-      },
-
-      {
-        "date": "Fri Nov 26 2021",
-        "venue": "Moscow Center",
-        "location": "San Francisco, CA"
-      },
-
-      {
-        "date": "Wed Dec 15 2021",
-        "venue": "Press Club",
-        "location": "San Francisco, CA"
-      },
-]
+showsUrl = "https://project-1-api.herokuapp.com/showdates?api_key=d141a6e3-78bf-4498-9e93-ae35bb59ac9e"
 
 
 const showSection = document.querySelector('.show-section'); 
@@ -43,27 +8,51 @@ const showTitle = document.createElement('h3');
 showTitle.classList.add('show-title');
 showTitle.textContent = 'Shows';
 
-const firstShowBox = showSection.querySelector('.show-box');
-showSection.insertBefore(showTitle, firstShowBox);
+const ShowBoxContainer = showSection.querySelector('.show-box');
+showSection.insertBefore(showTitle, ShowBoxContainer);
+
+
+
+
+
+// Axios Promise Get Shows data
+axios.get(showsUrl).then((response) => {
+  const shows = response.data;
+
+
+
 
 // --------------------  loop start -------------------- 
-showsItems.forEach(show => {
+shows.forEach(show => {
 
-
-  
   
   const showBox = document.createElement('div');
   showBox.classList.add('show-box');
+
+
+
+
+
+
+
 
   //-------------------- elements for date, venue, and location -------------------- 
   const dateTitle = document.createElement('div');
   dateTitle.classList.add('show-box__title');
   const dateHeader = document.createElement('p');
   dateHeader.classList.add('show-box__header');
+
+
   dateHeader.innerHTML = 'Date';
   const dateText = document.createElement('h3');
   dateText.classList.add('show-box__date');
-  dateText.innerHTML = show.date;
+
+  const dateShow = new Date(show.date);
+
+  const realTime = dateShow.toLocaleDateString();
+
+
+  dateText.innerHTML = realTime;
   dateTitle.appendChild(dateHeader);
   dateTitle.appendChild(dateText);
 
@@ -74,7 +63,7 @@ showsItems.forEach(show => {
   venueHeader.innerHTML = 'Venue';
   const venueText = document.createElement('h3');
   venueText.classList.add('show-box__venue');
-  venueText.innerHTML = show.venue;
+  venueText.innerHTML = show.place;
   venueTitle.appendChild(venueHeader);
   venueTitle.appendChild(venueText);
 
@@ -105,6 +94,19 @@ showsItems.forEach(show => {
 
   // Append the show box element to the parent element
   showSection.appendChild(showBox);
+
+
+
+
+
+
+
+
+
+
+
+
+});
 });
 
 

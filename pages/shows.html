@@ -6,13 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../styles/shows.css" />
     <script src="../scripts/build-shows-page.js" defer></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
     <title>Shows</title>
   </head>
   <body>
     <!-- /*-------------------------------------Nav Bar Starts -----------------------------------------*/ -->
 
-
     <nav class="nav-item">
+
+      <div class="nav-item__container">
       <div class="nav-item__logo">
         <img
           src="../assets/Logo/Logo-bandsite.svg"
@@ -24,7 +27,6 @@
       <div class="nav-item__link">
         <div class="nav-item__link--item">
           <a href="../index.html" class="nav-item__navlink--bio">Biography</a>
-          
         </div>
 
         <div class="nav-item__link--item">
@@ -32,6 +34,7 @@
           <hr />
         </div>
       </div>
+    </div>
     </nav>
     <!-- /*-------------------------------------Nav Bar ends -----------------------------------------*/ -->
 
@@ -46,7 +49,12 @@
             For The Stings
           </h1>
           <div class="soundcloud-container">
-            <iframe  scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1486259551&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
+            <iframe
+              scrolling="no"
+              frameborder="no"
+              allow="autoplay"
+              src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1486259551&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"
+            ></iframe>
           </div>
         </div>
       </div>
@@ -56,23 +64,7 @@
 
     <!-- /*-------------------------------------Shows Starts-----------------------------------------*/ -->
 
-    
-
-    <div class="show-section">
-
-
-    </div>
-
-
-
-
-
-
-    
-
-
-
-
+    <div class="show-section"></div>
 
     <!-- /*-------------------------------------Shows Ends-----------------------------------------*/ -->
 
@@ -102,7 +94,6 @@
               class="footer-item__header--socialmedia"
             />
           </div>
-          
         </div>
 
         <div class="footer-item__sponsors">
