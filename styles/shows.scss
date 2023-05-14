@@ -7,7 +7,6 @@ body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
-  
 }
 
 // Nav Bar Starts
@@ -17,9 +16,8 @@ nav {
   position: relative;
 }
 
-.nav-item{
+.nav-item {
   background-color: $bandsite-black;
- 
 
   &__container {
     display: flex;
@@ -65,13 +63,11 @@ nav {
 
 @media only screen and (min-width: 767px) {
   .nav-item {
-    
     &__container {
       display: flex;
       flex-direction: row;
       gap: 50px;
     }
-
 
     &__logo {
       padding-top: 1.25rem;
@@ -89,8 +85,6 @@ nav {
     font-size: 14px;
     line-height: 32px;
   }
-
-
 }
 
 .nav-item div.nav-item__link--item hr {
@@ -103,15 +97,13 @@ nav {
 
 @media only screen and (min-width: 1280px) {
   .nav-item {
-    
     gap: 50px;
 
-    &__container{
+    &__container {
       max-width: 1280px;
       margin: auto;
       padding: auto;
     }
-
 
     &__link {
       gap: 60px;
@@ -119,23 +111,20 @@ nav {
   }
 }
 
-
 //   Nav bar ends
 
 /*-------------------------------------Hero Image Start-----------------------------------------*/
 .hero-image {
   height: 50%;
   width: 100%;
-  
-  
+
   background-size: cover;
   background-position: 50% 50%;
   background-image: url(../assets/Images/hero-shows.jpg);
-  
 
   &__text {
     font-family: $avenir_demi;
- 
+
     display: flex;
     flex-direction: column;
     padding-top: 1.9375rem;
@@ -151,17 +140,13 @@ nav {
 
     background: rgba(0, 0, 0, 0.2);
   }
-
- 
 }
-
-
 
 .soundcloud-container {
   position: relative;
   width: 100%;
   height: 0;
-  padding-bottom: 36.25%; 
+  padding-bottom: 36.25%;
 }
 
 .soundcloud-container iframe {
@@ -173,11 +158,8 @@ nav {
 }
 
 @media only screen and (min-width: 767px) {
-
-  
   .hero-image {
     height: 50vh;
-    
 
     &__top {
       @include subheader-desktop;
@@ -191,7 +173,6 @@ nav {
 
     &__text {
       padding-left: 30px;
-
     }
   }
 
@@ -201,37 +182,32 @@ nav {
     position: absolute;
     padding-top: 15%;
   }
+}
 
- }
-
- @media only screen and (min-width: 1280px) {
+@media only screen and (min-width: 1280px) {
   .hero-image {
     height: 40.25rem;
 
     &__text {
       display: flex;
-    flex-direction: column;
-    
+      flex-direction: column;
     }
   }
-
-  
 
   .soundcloud-container iframe {
     width: 60%;
     height: 20%;
-   
   }
- }
+}
 
- @media only screen and (min-width: 1280px) {
-  .hero-image  {
-   &__text{
-    max-width: 1280px;
-    margin: auto;
-   }
+@media only screen and (min-width: 1280px) {
+  .hero-image {
+    &__text {
+      max-width: 1280px;
+      margin: auto;
+    }
   }
- }
+}
 
 /*-------------------------------------Hero Image Ends-----------------------------------------*/
 
@@ -243,133 +219,116 @@ nav {
   padding-left: 5%;
 }
 
-
 .show-title {
   @include page-header-mobile;
-  font-family: $avenir_demi
+  font-family: $avenir_demi;
 }
-
-
-
-
-
 
 .show-box {
   display: flex;
   flex-direction: column;
-  
 
   padding-left: 5%;
   border-bottom: 1px solid $mercury;
   margin-bottom: 1rem;
 
-  
-
-
   &__header {
-        font-family: $avenir_demi;
-        font-size: 13px;
-        color: $silver;
-        margin: 0;
-      }
+    font-family: $avenir_demi;
+    font-size: 13px;
+    color: $silver;
+    margin: 0;
+  }
 
-      &__header first-child {
-        color: green
-      }
+  &__header first-child {
+    color: green;
+  }
 
   &__date {
     @include shows-formating;
-    
-}
-&__venue {
+  }
+  &__venue {
     @include shows-formating;
-
-    
-}
-&__location {
+  }
+  &__location {
     @include shows-formating;
-
-}
-
-  &__submit {
-  background-color: #323232;
-  color: #FFFFFF;
-  margin-top: 1.5625rem;
-  margin-left: 50px;
-  padding-right: 80px;
-  border-radius: 5px;
-  font-family: "AvenirDemi";
-  font-size: 14px;
-  border: none;
-  margin-bottom: 1rem;
   }
 
-
-
-
+  &__submit {
+    background-color: #323232;
+    color: #ffffff;
+    margin-top: 1.5625rem;
+    margin-left: 50px;
+    padding-right: 80px;
+    border-radius: 5px;
+    font-family: "AvenirDemi";
+    font-size: 14px;
+    border: none;
+    margin-bottom: 1rem;
+  }
 }
-
 
 .show-box {
   background-color: $white;
 
-  &:hover { 
+  &:hover{
     background-color: $alabaster;
-  }
 
-  &:active {
-    background-color: $mercury;
   }
 
 
+  }
+
+
+.active {
+  background-color: $mercury;
+  
 }
 
-  @media screen and (min-width: 767px) {
-
-    .show-title {
-      @include section-header-desktop;
-      font-family: $avenir_demi;
-      
-    }
-
-    .show-box {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-around;
-      
-      
- 
 
 
 
-      &__submit {
-        width: 2%;
-      }
 
-      &__date {
-        @include shows-formating;
-        
-    }
-    &__venue {
-        @include shows-formating;
-        width: 10rem;
-    
-        
-    }
-    &__location {
-        @include shows-formating;
-        width: 15rem;
-    
-    }
+
+
+@media screen and (min-width: 767px) {
+  .show-title {
+    @include section-header-desktop;
+    font-family: $avenir_demi;
+  }
+
+  .show-box {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
 
     &__submit {
-      
-    }
-      
+      width: 2%;
     }
 
+    &__date {
+      @include shows-formating;
+    }
+    &__venue {
+      @include shows-formating;
+      width: 10rem;
+    }
+    &__location {
+      @include shows-formating;
+      width: 15rem;
+    }
 
+    &__header {
+      display: none;
+    }
   }
+
+  // show only first box when not phone
+  .show-box__top {
+    .show-box__header {
+      display: flex;
+    }
+  }
+}
 
 /*-------------------------------------Footer Starts----------------------------------------*/
 
