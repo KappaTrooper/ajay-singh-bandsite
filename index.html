@@ -19,11 +19,12 @@
   </head>
   <body>
     <!-- /*-------------------------------------Nav Bar-----------------------------------------*/ -->
-
     <nav class="nav-item">
+
+      <div class="nav-item__container">
       <div class="nav-item__logo">
         <img
-          src="assets/Logo/Logo-bandsite.svg"
+          src="../assets/Logo/Logo-bandsite.svg"
           alt="main-logo"
           class="nav-item__header"
         />
@@ -31,16 +32,17 @@
 
       <div class="nav-item__link">
         <div class="nav-item__link--item">
-          <a href="#" class="nav-item__navlink--bio">Biography</a>
+          <a href="../index.html" class="nav-item__navlink--bio">Biography</a>
           <hr />
         </div>
 
         <div class="nav-item__link--item">
           <a href="pages/shows.html" class="nav-item__navlink--show">Shows</a>
+          
         </div>
       </div>
+    </div>
     </nav>
-
     <!-- /*-------------------------------------Hero Image-----------------------------------------*/ -->
 
     <div class="hero-image">
@@ -97,21 +99,21 @@
         <h3 class="photo-gallery__header">Photo Gallery</h3>
         <div class="photo-gallery__row">
           <div class="photo-gallery__column">
-            <img src="assets/Images/Photo-gallery-1.jpg" alt="" />
-            <img src="assets/Images/Photo-gallery-2.jpg" alt="" />
-            <img src="assets/Images/Photo-gallery-3.jpg" alt="" />
+            <img src="assets/Images/Photo-gallery-1.jpg" alt="Gallery_img 1" />
+            <img src="assets/Images/Photo-gallery-2.jpg" alt="Gallery_img 2" />
+            <img src="assets/Images/Photo-gallery-3.jpg" alt="Gallery_img 3" />
           </div>
 
           <div class="photo-gallery__column">
-            <img src="assets/Images/Photo-gallery-4.jpg" alt="" />
-            <img src="assets/Images/Photo-gallery-5.jpg" alt="" />
-            <img src="assets/Images/Photo-gallery-6.jpg" alt="" />
+            <img src="assets/Images/Photo-gallery-4.jpg" alt="Gallery_img 4" />
+            <img src="assets/Images/Photo-gallery-5.jpg" alt="Gallery_img 5" />
+            <img src="assets/Images/Photo-gallery-6.jpg" alt="Gallery_img 6" />
           </div>
 
           <div class="photo-gallery__column">
-            <img src="assets/Images/Photo-gallery-7.jpg" alt="" />
-            <img src="assets/Images/Photo-gallery-8.jpg" alt="" />
-            <img src="assets/Images/Photo-gallery-9.jpg" alt="" />
+            <img src="assets/Images/Photo-gallery-7.jpg" alt="Gallery_img 7" />
+            <img src="assets/Images/Photo-gallery-8.jpg" alt="Gallery_img 8" />
+            <img src="assets/Images/Photo-gallery-9.jpg" alt="Gallery_img 9" />
           </div>
         </div>
       </div>
@@ -120,7 +122,9 @@
     <!-- /*----------------------------------------Form starts-----------------------------------------------*/ -->
 
     <form class="form">
+      <h1 class="comment-header">Join the Conversation</h1>
       <div class="comment-form">
+        
         <div class="comment-form__avatar">
           <img
             src="assets/Images/Mohan-muruge.jpg"
@@ -132,23 +136,24 @@
         <div class="comment-form__comment">
           <div class="comment-form__name">
             <label for="commentName" class="comment-form__text"
-              >First name:</label
+              >NAME</label
             >
-            <br />
-            <input type="text" name="commentName" placeholder="Add your name" />
-            <br />
+            
+            <input type="text" name="commentName" class="comment-form__input" placeholder="Add your name" />
+            
           </div>
 
           <div class="comment-form__comment">
             <label for="commentName" class="comment-form__text">Comment</label>
-            <br />
+            
             <textarea
               name="bio"
               cols="20"
               rows="5"
+              class="comment-form__input"
               placeholder="Add your comment"
             ></textarea>
-            <br /><br />
+            
               <input
                 type="submit"
                 class="comment-form__submit"

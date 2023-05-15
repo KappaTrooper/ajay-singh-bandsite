@@ -138,7 +138,7 @@ nav {
     height: 100%;
     width: 100%;
 
-    background: rgba(0, 0, 0, 0.2);
+    background: rgba(57, 57, 57, 0.5)
   }
 }
 
@@ -153,13 +153,13 @@ nav {
   position: absolute;
   top: 0;
   left: 0;
-  width: 90%;
-  height: 50%;
+  width: 95%;
+  height: 80%;
 }
 
 @media only screen and (min-width: 767px) {
   .hero-image {
-    height: 50vh;
+    height: 35vh;
 
     &__top {
       @include subheader-desktop;
@@ -173,41 +173,59 @@ nav {
 
     &__text {
       padding-left: 30px;
+      display: flex;
+      flex-direction: column;
+      gap: 15.625rem;
     }
   }
 
+
+
   .soundcloud-container iframe {
-    width: 60%;
     height: 30%;
-    position: absolute;
-    padding-top: 15%;
+    width: 80%;
+
+  
   }
+  
 }
 
 @media only screen and (min-width: 1280px) {
   .hero-image {
-    height: 40.25rem;
+    height: 40vh;
 
     &__text {
       display: flex;
-      flex-direction: column;
+      flex-direction: row;
+       gap: 5%;
+       max-width: 1280px;
     }
+
+    &__top {
+      margin-top: 5%;
+      width: 100%;
+      
+    }
+
+
+
   }
 
+
+
+
+
+  
   .soundcloud-container iframe {
-    width: 60%;
-    height: 20%;
+    height: 30%;
+    width: 80%;
+
+  
   }
+  
 }
 
-@media only screen and (min-width: 1280px) {
-  .hero-image {
-    &__text {
-      max-width: 1280px;
-      margin: auto;
-    }
-  }
-}
+
 
 /*-------------------------------------Hero Image Ends-----------------------------------------*/
 
@@ -217,6 +235,7 @@ nav {
   font-family: $avenir_demi;
   font-size: 1.5rem;
   padding-left: 5%;
+  
 }
 
 .show-title {
@@ -256,9 +275,8 @@ nav {
   &__submit {
     background-color: #323232;
     color: #ffffff;
-    margin-top: 1.5625rem;
-    margin-left: 50px;
-    padding-right: 80px;
+    width: 90%;
+    height: 40px;
     border-radius: 5px;
     font-family: "AvenirDemi";
     font-size: 14px;
@@ -299,18 +317,25 @@ nav {
   .show-box {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: flex-start;
+    gap: 3%;
 
-    &__submit {
-      width: 2%;
-    }
+ 
 
     &__date {
       @include shows-formating;
+      display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    
     }
     &__venue {
       @include shows-formating;
       width: 10rem;
+      display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    
     }
     &__location {
       @include shows-formating;
@@ -319,7 +344,44 @@ nav {
 
     &__header {
       display: none;
+      display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    
     }
+
+    &__submit {
+      background-color: #323232;
+      color: #ffffff;
+      width: 20%;
+      height: 40px;
+      
+    
+    
+   
+    }
+  }
+
+  @media screen and (min-width: 1279px) {
+
+    .show-box {
+     
+      gap: 10%;
+      width: 60%;
+      padding-left: 30%;
+      max-width: 1280px;
+    }
+
+    .show-box:after{
+      position: absolute;
+      content: '';
+      border-bottom: 1px solid #d2d7da;
+      width: 70%;
+      transform: translateX(-50%);
+      bottom: -15px;
+      left: 50%;
+    }
+
   }
 
   // show only first box when not phone

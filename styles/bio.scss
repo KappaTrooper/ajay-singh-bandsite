@@ -7,19 +7,24 @@ body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
+  font-family: sans-serif;
 }
 
 /*--------------------------------------Nav Bar-----------------------------------------*/
 nav {
   color: $white;
+  position: relative;
 }
 
 .nav-item {
   background-color: $bandsite-black;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  position: relative;
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+  }
 
   &__logo {
     padding-top: 10px;
@@ -44,10 +49,9 @@ nav {
     width: 100%;
     background-color: $mercury;
     position: absolute;
-    top: 135%;
+    top: 140%;
 
-
-    height: 3px;
+    height: 2px;
   }
 }
 
@@ -57,16 +61,18 @@ nav {
   @include subheader-mobile;
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 767px) {
   .nav-item {
-    display: flex;
-    flex-direction: row;
-    gap: 50px;
+    &__container {
+      display: flex;
+      flex-direction: row;
+      gap: 50px;
+    }
 
     &__logo {
       padding-top: 1.25rem;
       padding-bottom: 1.25rem;
-      padding-left: 3%;
+      padding-left: 4%;
     }
 
     &__link {
@@ -79,15 +85,24 @@ nav {
     font-size: 14px;
     line-height: 32px;
   }
-  
+}
+
+.nav-item div.nav-item__link--item hr {
+  width: 100%;
+  background-color: $mercury;
+  position: absolute;
+  top: 130%;
+  height: 4px;
 }
 
 @media only screen and (min-width: 1280px) {
   .nav-item {
     gap: 50px;
 
-    &__logo {
-      padding-left: 10%;
+    &__container {
+      max-width: 1280px;
+      margin: auto;
+      padding: auto;
     }
 
     &__link {
@@ -96,35 +111,67 @@ nav {
   }
 }
 
+//   Nav bar ends
+
 /*-------------------------------------Hero Image-----------------------------------------*/
 .hero-image {
-  height: 70vh;
-  width: 100vw;
+  height: 18.75rem;
+  width: 100%;
   position: relative;
   background-size: cover;
-  background-position: 50% 50%;
+  background-position: center;
   background-image: url(../assets/Images/hero-bio.jpg);
 
   &__overlay {
-    
     height: 100%;
     width: 100%;
     top: 0;
     left: 0;
-    padding-left: 10%;
-    background: rgba(0, 0, 0, 0.65);
-    color: white;
+    padding-left: 5%;
+    background: rgba(57, 57, 57, 0.5);
+
     display: flex;
-    
     justify-content: center;
+    align-items: flex-start;
     flex-direction: column;
   }
 
   &__header {
     font-family: $avenir_demi;
-    font-size: 74px;
-    
-    letter-spacing: 0px;
+    font-size: 24px;
+    color: white;
+  }
+}
+
+@media only screen and (min-width: 767px) {
+  .hero-image {
+    height: 40.75rem;
+
+    &__overlay {
+      padding-left: 5%;
+    }
+
+    &__header {
+      @include page-header-desktop;
+      font-family: $avenir_demi;
+    }
+  }
+}
+
+@media only screen and (min-width: 1280px) {
+  .hero-image {
+    height: 50.75rem;
+
+    &__overlay {
+      padding-left: 12%;
+    }
+
+    &__header {
+      max-width: 1280px;
+      margin: 0;
+      @include page-header-desktop;
+      font-family: $avenir_demi;
+    }
   }
 }
 
@@ -134,12 +181,14 @@ nav {
   display: flex;
   flex-direction: column;
   text-align: center;
-  padding: 16px;
+  align-items: flex-start;
+  padding: 1rem;
 
   &__header {
     @include section-header-mobile;
     font-family: $avenir_demi;
     text-align: left;
+    @include max-width-phone;
   }
 
   & img {
@@ -149,18 +198,20 @@ nav {
   }
 
   &__quote {
-    font-family: AvenirDemi;
+    font-family: $avenir_regular;
     text-align: left;
     display: flex;
     flex-direction: column;
     gap: 0.625rem;
+    line-height: 1.125rem;
   }
 
   &__paragraph-header {
     @include subheader-mobile;
-    font-family: $avenir_demi;
+    font-family: $avenir_regular;
+    font-size: 18px;
     text-align: left;
-    margin-bottom: -5px;
+    margin-bottom: 0.3125rem;
   }
 
   &__paragraph {
@@ -168,7 +219,7 @@ nav {
     flex-direction: column;
     width: 100%;
     @include body-copy-mobile;
-    text-align: justify;
+    text-align: left;
     gap: 5px;
   }
 }
@@ -177,10 +228,17 @@ nav {
   .main-section {
     padding: 1.5rem 10% 0;
 
+    &__header {
+      padding-top: 1.5rem;
+
+      font-size: 36px;
+    }
+
     & img {
-      width: 50vh;
+      width: 100%;
       height: 30vh;
       margin: 0 auto;
+      padding-top: 1rem;
     }
 
     &__paragraph-header {
@@ -208,14 +266,23 @@ nav {
     padding: 0.5rem 20% 0;
 
     & img {
-      width: 60vh;
       height: 40vh;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      width: 100%;
     }
     &__quote {
       text-align: left;
-      width: 50%;
+      width: 55%;
+      font-size: 15px;
+      color: $bandsite-black;
 
       gap: 0.625rem;
+    }
+
+    &__paragraph-header {
+      font-family: $avenir_demi;
     }
     &__paragraph-one {
       line-height: 20px;
@@ -231,19 +298,24 @@ nav {
 .photo {
   margin: 0 auto;
   background-color: $alabaster;
+
+  padding-bottom: 5%;
 }
 .photo-gallery {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  margin: 0.3125rem;
 
   &__header {
     width: 98%;
     margin: 0 auto;
     @include subheader-mobile;
     font-size: 25px;
+    padding-left: 3%;
     padding-top: 25px;
     padding-bottom: 10px;
+    @include max-width-phone;
   }
 
   &__row {
@@ -265,9 +337,19 @@ nav {
 }
 
 @media screen and (min-width: 767px) {
+  .photo {
+    width: 100vh;
+  }
+
   .photo-gallery {
-    width: 80%;
+    width: 60%;
     margin: 0 auto;
+    margin-left: 3%;
+
+    &__header {
+      font-size: 30px;
+      color: $bandsite-black;
+    }
 
     &__column {
       flex: 25%;
@@ -277,14 +359,21 @@ nav {
   }
 }
 
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 1279px) {
   .photo {
-    padding-bottom: 20px;
+    width: 150%;
+  } 
 
-    &__photo-gallery {
-      width: 50%;
+    .photo-gallery {
+      width: 60%;
+      max-width: 1280px;
+
+    &__header{
+      margin-top: 1rem;
+      margin-bottom: 1rem;
     }
-  }
+    }
+  
 }
 
 /*-------------------------------------Diving Deeper - gallery Hover----------------------------------------*/
@@ -301,8 +390,13 @@ nav {
 
 /*--------------------------------------Form--------------------------------------------*/
 
+.comment-header {
+  font-family: $avenir_demi;
+  @include max-width-phone;
+  padding-left: 10px;
+}
+
 .comment-form {
-  // margin: 1.25rem 10px 0;
   margin: 1.25rem 1.25rem 0.625rem 0.625rem;
   padding: 0;
   display: flex;
@@ -319,12 +413,20 @@ nav {
 
   &__submit {
     @include button-mobile;
-
+    background-color: $bandsite-black;
     border: 1px solid $mercury;
+    font-family: $avenir_demi;
+    font-size: 12px;
     border-radius: 4px;
     height: 2.625rem;
     width: 102%;
+    margin-top: 5%;
   }
+
+  &__submit:hover {
+    background-color: $bandsite-darkblack;
+  }
+
   &__placeholder {
     font-family: $avenir_demi;
   }
@@ -344,6 +446,9 @@ textarea::placeholder {
   font-family: $avenir_regular;
   padding-top: 0.625rem;
   padding-left: 0.75rem;
+}
+.comment-form__input--error {
+  border-color: red;
 }
 
 input[type="text"] {
@@ -366,10 +471,18 @@ textarea[name="bio"] {
 }
 
 @media screen and (min-width: 767px) {
+  .comment-header {
+    font-size: 36px;
+    padding-left: 50px;
+  }
   .comment-form {
     padding-top: 4%;
     margin: 0 15% 0;
     gap: 15px;
+    
+    &__text {
+      color: $silver;
+    }
 
     & img {
       vertical-align: middle;
@@ -379,13 +492,13 @@ textarea[name="bio"] {
     }
 
     &__submit {
-      @include button-desktop;
       font-family: $avenir_demi;
 
       border: 1px solid $mercury;
       border-radius: 4px;
       height: 42px;
       width: 30%;
+      font-size: 15px;
       margin-left: 350px;
     }
     &__placeholder {
@@ -407,16 +520,21 @@ textarea[name="bio"] {
 
 /*-------------------------------------Comments-----------------------------------------*/
 .comment-item {
-  margin: 20px;
+  margin: 10px;
   display: flex;
   justify-content: flex-start;
-  gap: 10px;
+  align-items: flex-start;
+  min-height: 70px;
+  gap: 1px;
+  
 
   &__top {
+    
     display: flex;
     justify-content: space-between;
     @include body-copy-mobile;
     font-family: $avenir_demi;
+    gap: 10px;
   }
 
   &__divname {
@@ -429,6 +547,7 @@ textarea[name="bio"] {
 
   &__bottom {
     @include body-copy-mobile;
+    width: 55%
   }
 
   & img {
@@ -445,7 +564,7 @@ hr.comment-divider {
 
 @media screen and (min-width: 767px) {
   .comment-item {
-    //margin: top right_left bottom;
+    
     margin: 0 15% 0;
     gap: 15px;
 
@@ -463,12 +582,14 @@ hr.comment-divider {
   hr.comment-divider {
     stroke-width: 1px;
     width: 75%;
+    margin-top: 2%;
+    margin-bottom: 3%;
   }
 }
 
 @media screen and (min-width: 1280px) {
   .comment-item {
-    //margin: top right_left bottom;
+    
     margin: 0 30% 0;
   }
 
@@ -567,11 +688,50 @@ hr.comment-divider {
     left: 10%;
     gap: 28px;
 
-    &__copywrite {
-    }
-
     &__mobilefooterlogo {
       left: 70%;
     }
   }
 }
+
+
+// ---------------------------------------------
+
+@media screen and (min-width: 1921px) {
+  .hero-image { 
+    height: 80vh;
+
+    &__header{
+      font-size: 68px
+    }
+  }
+
+  .main-section {
+    
+    & img {
+      height: 5%;
+    }
+
+    &__quote {
+      width: 100%;
+    }
+
+  
+
+
+  }
+
+
+  .photo-gallery {
+    padding-left: 10%;
+     }
+
+     .comment-item {
+      margin-top: 0%;
+      margin-bottom: 0%;
+     }
+
+
+
+}
+

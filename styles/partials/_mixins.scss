@@ -1,6 +1,15 @@
 @use "font" as *;
 @use "variables" as *;
 
+@mixin max-width-phone {
+  max-width: 1280px;
+  margin: 0;
+}
+
+@mixin max-width-tablet {
+  max-width: 264px;
+}
+
 @mixin page-header-desktop {
   font-size: 60px;
   line-height: 68px;
@@ -74,14 +83,12 @@
   font-family: $avenir_bold;
 }
 
-
 @mixin shows-formating {
   color: $bandsite-darkblack;
   font-family: $avenir_regular;
   font-size: 15px;
   margin-top: 5px;
 }
-
 
 /*-----------------Global Mixins-----------------------*/
 
@@ -93,16 +100,12 @@
   object-fit: cover;
 }
 
-
 @mixin button-mobile {
   font-family: $avenir_regular;
   font-size: 10px;
   line-height: 20px;
-  background-color: $bandsite-darkblack;
   color: white;
 }
-
-
 
 @mixin button-desktop {
   font-family: $avenir_regular;
